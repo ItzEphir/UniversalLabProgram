@@ -12,8 +12,6 @@
 #define new DEBUG_NEW
 #endif
 
-
-CDialogEx* nextDlg;
 // Диалоговое окно CAboutDlg используется для описания сведений о приложении
 
 class CAboutDlg : public CDialogEx
@@ -68,6 +66,7 @@ BEGIN_MESSAGE_MAP(CUniversalLabProgramDlg, CDialogEx)
 	ON_WM_QUERYDRAGICON()
 	ON_BN_CLICKED(IDC_BUTTON1, &CUniversalLabProgramDlg::OnBnClickedButton1)
 	ON_WM_CREATE()
+	ON_BN_CLICKED(IDC_BUTTON2, &CUniversalLabProgramDlg::OnBnClickedButton2)
 END_MESSAGE_MAP()
 
 
@@ -103,6 +102,8 @@ BOOL CUniversalLabProgramDlg::OnInitDialog()
 	SetIcon(m_hIcon, FALSE);		// Мелкий значок
 
 	// TODO: добавьте дополнительную инициализацию
+	convertDialog.Create(IDD_DIALOGCONVERT, this);
+	countWBGDialog.Create(IDD_DIALOGCOUNTWBG, this);
 
 	return TRUE;  // возврат значения TRUE, если фокус не передан элементу управления
 }
@@ -160,8 +161,7 @@ HCURSOR CUniversalLabProgramDlg::OnQueryDragIcon()
 
 void CUniversalLabProgramDlg::OnBnClickedButton1()
 {
-	nextDlg->Create(IDD_DIALOGCONVERT, this);
-	nextDlg->ShowWindow(1);
+	convertDialog.ShowWindow(1);
 	ShowWindow(0);
 }
 
@@ -172,4 +172,11 @@ int CUniversalLabProgramDlg::OnCreate(LPCREATESTRUCT lpCreateStruct)
 		return -1;
 
 	return 0;
+}
+
+
+void CUniversalLabProgramDlg::OnBnClickedButton2()
+{
+	countWBGDialog.ShowWindow(1);
+	ShowWindow(0);
 }
