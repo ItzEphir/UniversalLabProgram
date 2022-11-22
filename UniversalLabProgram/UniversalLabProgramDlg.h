@@ -4,7 +4,9 @@
 
 #pragma once
 #include "CDialogConvert.h"
-#include "CDialogCountWBG.h"
+#include "CDialogCountFBG.h"
+#include "CDialogCountResonator.h"
+#include "CDialogFileProcessing.h"
 
 // Диалоговое окно CUniversalLabProgramDlg
 class CUniversalLabProgramDlg : public CDialogEx
@@ -27,7 +29,9 @@ protected:
 	HICON m_hIcon;
 
 	CDialogConvert convertDialog;
-	CDialogCountWBG countWBGDialog;
+	CDialogCountFBG countWBGDialog;
+	CDialogCountResonator countResonatorDialog;
+	CDialogFileProcessing fileProcessingDialog;
 
 	// Созданные функции схемы сообщений
 	virtual BOOL OnInitDialog();
@@ -39,4 +43,6 @@ public:
 	afx_msg void OnBnClickedButton1();
 	afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct);
 	afx_msg void OnBnClickedButton2();
+	afx_msg void OnBnClickedButton3();
+	afx_msg void OnBnClickedButton4();
 };

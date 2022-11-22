@@ -184,7 +184,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="CDialogConvert.h" />
-    <ClInclude Include="CDialogCountWBG.h" />
+    <ClInclude Include="CDialogCountFBG.h" />
+    <ClInclude Include="CDialogCountResonator.h" />
+    <ClInclude Include="CDialogFileProcessing.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Resource.h" />
@@ -194,7 +196,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CDialogConvert.cpp" />
-    <ClCompile Include="CDialogCountWBG.cpp" />
+    <ClCompile Include="CDialogCountFBG.cpp" />
+    <ClCompile Include="CDialogCountResonator.cpp" />
+    <ClCompile Include="CDialogFileProcessing.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

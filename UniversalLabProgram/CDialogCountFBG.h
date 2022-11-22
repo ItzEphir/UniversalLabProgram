@@ -2,15 +2,15 @@
 #include "afxdialogex.h"
 
 
-// Диалоговое окно CDialogCountWBG
+// Диалоговое окно CDialogCountFBG
 
-class CDialogCountWBG : public CDialogEx
+class CDialogCountFBG : public CDialogEx
 {
-	DECLARE_DYNAMIC(CDialogCountWBG)
+	DECLARE_DYNAMIC(CDialogCountFBG)
 
 public:
-	CDialogCountWBG(CWnd* pParent = nullptr);   // стандартный конструктор
-	virtual ~CDialogCountWBG();
+	CDialogCountFBG(CWnd* pParent = nullptr);   // стандартный конструктор
+	virtual ~CDialogCountFBG();
 
 // Данные диалогового окна
 #ifdef AFX_DESIGN_TIME

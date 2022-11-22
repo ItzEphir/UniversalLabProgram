@@ -67,6 +67,8 @@ BEGIN_MESSAGE_MAP(CUniversalLabProgramDlg, CDialogEx)
 	ON_BN_CLICKED(IDC_BUTTON1, &CUniversalLabProgramDlg::OnBnClickedButton1)
 	ON_WM_CREATE()
 	ON_BN_CLICKED(IDC_BUTTON2, &CUniversalLabProgramDlg::OnBnClickedButton2)
+	ON_BN_CLICKED(IDC_BUTTON3, &CUniversalLabProgramDlg::OnBnClickedButton3)
+	ON_BN_CLICKED(IDC_BUTTON4, &CUniversalLabProgramDlg::OnBnClickedButton4)
 END_MESSAGE_MAP()
 
 
@@ -103,7 +105,9 @@ BOOL CUniversalLabProgramDlg::OnInitDialog()
 
 	// TODO: добавьте дополнительную инициализацию
 	convertDialog.Create(IDD_DIALOGCONVERT, this);
-	countWBGDialog.Create(IDD_DIALOGCOUNTWBG, this);
+	countWBGDialog.Create(IDD_DIALOGCOUNTFBG, this);
+	countResonatorDialog.Create(IDD_DIALOGCOUNTRESONATOR, this);
+	fileProcessingDialog.Create(IDD_DIALOGFILEPROCESSING, this);
 
 	return TRUE;  // возврат значения TRUE, если фокус не передан элементу управления
 }
@@ -179,4 +183,17 @@ void CUniversalLabProgramDlg::OnBnClickedButton2()
 {
 	countWBGDialog.ShowWindow(1);
 	ShowWindow(0);
+}
+
+
+void CUniversalLabProgramDlg::OnBnClickedButton3()
+{
+	countResonatorDialog.ShowWindow(1);
+	ShowWindow(0);
+}
+
+
+void CUniversalLabProgramDlg::OnBnClickedButton4()
+{
+	
 }
