@@ -7,6 +7,7 @@
 #include "CDialogCountFBG.h"
 
 
+
 // Диалоговое окно CDialogCountFBG
 
 IMPLEMENT_DYNAMIC(CDialogCountFBG, CDialogEx)
