@@ -3,10 +3,12 @@
 //
 
 #pragma once
+#include <iostream>
 #include "CDialogConvert.h"
 #include "CDialogCountFBG.h"
 #include "CDialogCountResonator.h"
 #include "CDialogFileProcessing.h"
+#include <vector>
 
 // Диалоговое окно CUniversalLabProgramDlg
 class CUniversalLabProgramDlg : public CDialogEx
@@ -41,8 +43,18 @@ protected:
 	DECLARE_MESSAGE_MAP()
 public:
 	afx_msg void OnBnClickedButton1();
-	afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct);
 	afx_msg void OnBnClickedButton2();
 	afx_msg void OnBnClickedButton3();
 	afx_msg void OnBnClickedButton4();
+	afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct);
+	// Кнопка для перехода к окну конвертации
+	CButton btnConvert;
+	// Кнопка для перехода к окну расчета ВБР
+	CButton btnCountFBG;
+	// Кнопка для перехода к окну расчета резонатора
+	CButton btnCountResonator;
+	// Кнопка для перехода к окну обработки файлов
+	CButton btnFileProcessing;
+
+	// std::vector<std::shared_ptr<CButton>> buttons;
 };

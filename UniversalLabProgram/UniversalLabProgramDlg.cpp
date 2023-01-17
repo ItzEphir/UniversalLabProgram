@@ -12,6 +12,8 @@
 #define new DEBUG_NEW
 #endif
 
+// #define BUTTONCICLE for(std::shared_ptr<CButton> btn : buttons)
+
 // Диалоговое окно CAboutDlg используется для описания сведений о приложении
 
 class CAboutDlg : public CDialogEx
@@ -58,6 +60,10 @@ CUniversalLabProgramDlg::CUniversalLabProgramDlg(CWnd* pParent /*=nullptr*/)
 void CUniversalLabProgramDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
+	DDX_Control(pDX, IDC_BUTTON1, btnConvert);
+	DDX_Control(pDX, IDC_BUTTON2, btnCountFBG);
+	DDX_Control(pDX, IDC_BUTTON3, btnCountResonator);
+	DDX_Control(pDX, IDC_BUTTON4, btnFileProcessing);
 }
 
 BEGIN_MESSAGE_MAP(CUniversalLabProgramDlg, CDialogEx)
@@ -108,6 +114,21 @@ BOOL CUniversalLabProgramDlg::OnInitDialog()
 	countWBGDialog.Create(IDD_DIALOGCOUNTFBG, this);
 	countResonatorDialog.Create(IDD_DIALOGCOUNTRESONATOR, this);
 	fileProcessingDialog.Create(IDD_DIALOGFILEPROCESSING, this);
+
+	// buttons = std::vector<std::shared_ptr<CButton>>();
+
+	/*buttons.push_back(std::make_shared<CButton>(btnConvert));
+	buttons.push_back(std::make_shared<CButton>(btnCountFBG));
+	buttons.push_back(std::make_shared<CButton>(btnCountResonator));
+	buttons.push_back(std::make_shared<CButton>(btnFileProcessing));*/
+
+	unsigned int maxX = 0;
+
+	// BUTTONCICLE
+	// {
+	// 	CString cstr;
+	// 	btn->GetWindowTextW(cstr);
+	// }
 
 	return TRUE;  // возврат значения TRUE, если фокус не передан элементу управления
 }
@@ -169,16 +190,6 @@ void CUniversalLabProgramDlg::OnBnClickedButton1()
 	ShowWindow(0);
 }
 
-
-int CUniversalLabProgramDlg::OnCreate(LPCREATESTRUCT lpCreateStruct)
-{
-	if (CDialogEx::OnCreate(lpCreateStruct) == -1)
-		return -1;
-
-	return 0;
-}
-
-
 void CUniversalLabProgramDlg::OnBnClickedButton2()
 {
 	countWBGDialog.ShowWindow(1);
@@ -195,5 +206,15 @@ void CUniversalLabProgramDlg::OnBnClickedButton3()
 
 void CUniversalLabProgramDlg::OnBnClickedButton4()
 {
-	
+	fileProcessingDialog.ShowWindow(1);
+	ShowWindow(0);
 }
+
+int CUniversalLabProgramDlg::OnCreate(LPCREATESTRUCT lpCreateStruct)
+{
+	if (CDialogEx::OnCreate(lpCreateStruct) == -1)
+		return -1;
+
+	return 0;
+}
+
