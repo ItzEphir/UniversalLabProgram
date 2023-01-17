@@ -1,29 +1,32 @@
-﻿#pragma once
+#pragma once
 #include "afxdialogex.h"
+#include <cstring>
+#include <string>
+#include <iostream>
 
 
-// Диалоговое окно CDialogCountFBG
+// CDialogCountFBG dialog
 
 class CDialogCountFBG : public CDialogEx
 {
 	DECLARE_DYNAMIC(CDialogCountFBG)
 
 public:
-	CDialogCountFBG(CWnd* pParent = nullptr);   // стандартный конструктор
+	CDialogCountFBG(CWnd* pParent = nullptr);   // standard constructor
 	virtual ~CDialogCountFBG();
 
-// Данные диалогового окна
+// Dialog Data
 #ifdef AFX_DESIGN_TIME
-	enum { IDD = IDD_DIALOGCOUNTWBG };
+	enum { IDD = IDD_DIALOGCOUNTFBG };
 #endif
 
 protected:
-	virtual void DoDataExchange(CDataExchange* pDX);    // поддержка DDX/DDV
-	virtual BOOL OnInitDialog();
+	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
 
 	DECLARE_MESSAGE_MAP()
 public:
+	CButton button;
+	afx_msg void OnBnClickedButton1();
+	CEdit inputLength;
 	afx_msg void OnClose();
-	afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct);
-	afx_msg HBRUSH OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor);
 };

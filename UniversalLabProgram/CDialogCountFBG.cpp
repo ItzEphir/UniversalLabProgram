@@ -1,4 +1,4 @@
-﻿// CDialogCountFBG.cpp: файл реализации
+// CDialogCountFBG.cpp : implementation file
 //
 
 #include "pch.h"
@@ -7,14 +7,14 @@
 #include "CDialogCountFBG.h"
 
 
-
-// Диалоговое окно CDialogCountFBG
+// CDialogCountFBG dialog
 
 IMPLEMENT_DYNAMIC(CDialogCountFBG, CDialogEx)
 
 CDialogCountFBG::CDialogCountFBG(CWnd* pParent /*=nullptr*/)
 	: CDialogEx(IDD_DIALOGCOUNTFBG, pParent)
 {
+
 }
 
 CDialogCountFBG::~CDialogCountFBG()
@@ -24,55 +24,31 @@ CDialogCountFBG::~CDialogCountFBG()
 void CDialogCountFBG::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
+	DDX_Control(pDX, IDC_BUTTON1, button);
+	DDX_Control(pDX, IDC_EDIT_WAVELENGTH, inputLength);
 }
 
-BOOL CDialogCountFBG::OnInitDialog()
-{
-	CDialogEx::OnInitDialog();
-
-
-
-	return TRUE;
-}
-
-HBRUSH CDialogCountFBG::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
-{
-	HBRUSH m_brMyEditBk = CDialogEx::OnCtlColor(pDC, pWnd, nCtlColor);
-	if(pWnd->GetDlgCtrlID() == IDC_STATIC)
-		pDC->SetBkColor(RGB(255, 0, 0));
-		
-	return m_brMyEditBk;
-
-}
-
-int CDialogCountFBG::OnCreate(LPCREATESTRUCT lpCreateStruct)
-{
-	// Call the base class to create the window
-	if (CDialogEx::OnCreate(lpCreateStruct) == 0)
-	{
-
-		// If the window was successfully created, let the user know
-		MessageBox(L"The window has been created!!!");
-		// Since the window was successfully created, return 0
-		return 0;
-	}
-	// Otherwise, return -1
-	return -1;
-}
 
 BEGIN_MESSAGE_MAP(CDialogCountFBG, CDialogEx)
-	ON_WM_CTLCOLOR()
-	ON_WM_CREATE()
+	ON_BN_CLICKED(IDC_BUTTON1, &CDialogCountFBG::OnBnClickedButton1)
 	ON_WM_CLOSE()
 END_MESSAGE_MAP()
 
 
-// Обработчики сообщений CDialogCountFBG
+// CDialogCountFBG message handlers
+
+
+void CDialogCountFBG::OnBnClickedButton1()
+{
+	CString s;
+	inputLength.GetWindowTextW(s);
+}
 
 
 void CDialogCountFBG::OnClose()
 {
-	// TODO: добавьте свой код обработчика сообщений или вызов стандартного
+	// TODO: Add your message handler code here and/or call default
+
 	GetParent()->ShowWindow(1);
 
 	CDialogEx::OnClose();

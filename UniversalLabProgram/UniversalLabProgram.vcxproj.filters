@@ -36,13 +36,13 @@
     <ClInclude Include="CDialogConvert.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="CDialogCountFBG.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
     <ClInclude Include="CDialogCountResonator.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="CDialogFileProcessing.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="CDialogCountFBG.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
@@ -59,13 +59,13 @@
     <ClCompile Include="CDialogConvert.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="CDialogCountFBG.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="CDialogCountResonator.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="CDialogFileProcessing.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="CDialogCountFBG.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
