@@ -26,6 +26,9 @@ void CDialogCountFBG::DoDataExchange(CDataExchange* pDX)
 	CDialogEx::DoDataExchange(pDX);
 	DDX_Control(pDX, IDC_BUTTON1, button);
 	DDX_Control(pDX, IDC_EDIT_WAVELENGTH, inputLength);
+	DDX_Control(pDX, IDC_EDIT_PERIOD, inputPhaseMaskPeriod);
+	DDX_Control(pDX, IDC_EDIT3, outputEffectiveIindex);
+	DDX_Control(pDX, IDC_EDIT_FBG1_INTENSITY, inputIntensity);
 }
 
 
@@ -40,8 +43,29 @@ END_MESSAGE_MAP()
 
 void CDialogCountFBG::OnBnClickedButton1()
 {
-	CString s;
-	inputLength.GetWindowTextW(s);
+	// ƒлина решетки
+	CString inputLengthCString;
+	int inputLengthInt;
+	inputLength.GetWindowTextW(inputLengthCString);
+	inputLengthInt = _ttoi(inputLengthCString);
+	// ѕериод
+	CString inputPhaseMaskPeriodCString;
+	int inputPhaseMaskPeriodInt;
+	inputPhaseMaskPeriod.GetWindowTextW(inputPhaseMaskPeriodCString);
+	inputPhaseMaskPeriodInt = _ttoi(inputPhaseMaskPeriodCString);
+	// √лубина решетки
+	CString inputIntensityCString;
+	int inputIntensityInt;
+	inputPhaseMaskPeriod.GetWindowTextW(inputIntensityCString);
+	inputPhaseMaskPeriodInt = _ttoi(inputIntensityCString);
+
+	// Ёффективный индекс
+	CString outputEffectiveIindexCString;
+	int outputEffectiveIindexInt;
+	outputEffectiveIindexInt = inputLengthInt / inputPhaseMaskPeriodInt;
+	outputEffectiveIindexCString = std::to_string(outputEffectiveIindexInt).c_str();
+
+	outputEffectiveIindex.SetWindowTextW(outputEffectiveIindexCString);
 }
 
 

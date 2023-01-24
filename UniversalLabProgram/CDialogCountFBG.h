@@ -25,8 +25,20 @@ protected:
 
 	DECLARE_MESSAGE_MAP()
 public:
-	CButton button;
 	afx_msg void OnBnClickedButton1();
-	CEdit inputLength;
 	afx_msg void OnClose();
+
+	// Кнопка
+	CButton button;
+
+	//// Ввод значений
+	// Длина решетки
+	CEdit inputLength;
+	// Период
+	CEdit inputPhaseMaskPeriod;
+	// Глубина решетки
+	CEdit inputIntensity;
+
+	// Вывод значений
+	CEdit outputEffectiveIindex;
 };
