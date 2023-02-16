@@ -28,16 +28,24 @@ public:
 	afx_msg void OnBnClickedButton1();
 	afx_msg void OnClose();
 
+
+
 	// Кнопка
 	CButton button;
 
 	//// Ввод значений
-	// Длина решетки
-	CEdit inputLength;
+	// Длина волны
+	CEdit inputWaveLength;
 	// Период
 	CEdit inputPhaseMaskPeriod;
-	// Глубина решетки
-	CEdit inputIntensity;
+	// Глубина первой решетки
+	CEdit inputFirstIntensity;
+	// Длина первой решетки
+	CEdit inputFirstLenght;
+	// Глубина второй решетки
+	CEdit inputSecondIntensity;
+	// Длина второй решетки
+	CEdit inputSecondLenght;
 
 	// Вывод значений
 	CEdit outputEffectiveIindex;
