@@ -4,6 +4,8 @@
 #include <string>
 #include <iostream>
 
+#define M_PI 3.14159265358979323846
+#define vlight 299792458
 
 // CDialogCountFBG dialog
 
@@ -46,7 +48,24 @@ public:
 	CEdit inputSecondIntensity;
 	// Длина второй решетки
 	CEdit inputSecondLenght;
+	// Расстояние между решетками
+	CEdit inputSpaceBetween;
 
-	// Вывод значений
+	//// Вывод значений
+	// Эеффективный индекс
 	CEdit outputEffectiveIindex;
+	// Сила первой решетки
+	CEdit outputFirstStrenght;
+	// Сила второй решетки
+	CEdit outputSecondStrenght;
+	// Пропускная способность первой решетки
+	CEdit outputFirstBandwidth;
+	// Пропускная способность второй решетки
+	CEdit outputSecondBandwidth;
+	// ???
+	CEdit outputM_S;
+	CEdit outputFreq;
+
+
+	afx_msg void OnEnChangeEditSpace();
 };
